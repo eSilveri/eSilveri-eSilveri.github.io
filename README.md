@@ -1,3 +1,5 @@
+---
+
 Documentando meus estudos e laboratórios em Tecnologia da Informação.
 
 ---
@@ -8,12 +10,3 @@ Este é um espaço onde registro os labs que desenvolvo durante meus estudos, do
 
 ---
 
-## Tecnologias
-
-- Windows Server
-- Active Directory
-- Redes
-- Linux
-- Microsoft 365
-- Virtualização
-- PowerShell
