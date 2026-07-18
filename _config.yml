@@ -1,3 +1,21 @@
 title: Enzo Silveira
 description: Registro dos meus laboratórios de TI.
+url: "https://esilveri.github.io"
+baseurl: ""
+
 theme: minima
+
+author:
+  name: Enzo Silveira
+
+lang: pt-BR
+timezone: America/Sao_Paulo
+
+header_pages:
+  - about.md
+
+show_excerpts: true
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
