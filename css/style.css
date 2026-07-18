@@ -1,0 +1,376 @@
+/* =========================================================
+   Trilha Digital — folha de estilos
+   =========================================================
+   Como editar cores e fontes:
+   Todas as cores e fontes ficam definidas ali embaixo, no
+   bloco ":root". Se quiser trocar uma cor do site inteiro,
+   troque o valor dela aqui — não precisa mexer em mais nada.
+   ========================================================= */
+
+:root {
+  /* Cores */
+  --bg: #f2f5f5;
+  --bg-card: #ffffff;
+  --bg-alt: #e7edec;
+  --ink: #142033;
+  --ink-soft: #4a5568;
+  --ink-faint: #7c8797;
+  --accent: #1f6f78;
+  --accent-dark: #16525a;
+  --accent-warm: #e29b3f;
+  --line: #cdd7d7;
+
+  /* Tipografia */
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body: "Inter", -apple-system, sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+
+  --radius: 14px;
+  --max-width: 760px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--accent-dark);
+  text-decoration-color: var(--accent-warm);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+a:hover {
+  color: var(--accent);
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--accent-warm);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ---------- layout base ---------- */
+
+.wrap {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ---------- cabeçalho ---------- */
+
+.site-header {
+  border-bottom: 1px solid var(--line);
+  padding: 40px 0 28px;
+  background: linear-gradient(180deg, var(--bg-alt), var(--bg));
+}
+
+.site-header .wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.brand {
+  text-decoration: none;
+  color: var(--ink);
+}
+
+.brand-mark {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  display: block;
+  margin-bottom: 6px;
+}
+
+.brand-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 32px;
+  margin: 0;
+  color: var(--ink);
+}
+
+nav.site-nav {
+  display: flex;
+  gap: 22px;
+  font-family: var(--font-mono);
+  font-size: 14px;
+}
+
+nav.site-nav a {
+  color: var(--ink-soft);
+  text-decoration: none;
+  padding-bottom: 3px;
+  border-bottom: 2px solid transparent;
+}
+
+nav.site-nav a:hover,
+nav.site-nav a.active {
+  color: var(--ink);
+  border-bottom-color: var(--accent-warm);
+}
+
+/* ---------- hero ---------- */
+
+.hero {
+  padding: 56px 0 40px;
+}
+
+.hero p.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--accent);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin: 0 0 14px;
+}
+
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: 42px;
+  line-height: 1.15;
+  margin: 0 0 20px;
+  max-width: 14ch;
+}
+
+.hero p.lead {
+  font-size: 19px;
+  color: var(--ink-soft);
+  max-width: 52ch;
+  margin: 0;
+}
+
+/* ---------- trilha (elemento assinatura) ----------
+   Uma linha vertical com marcadores, como o perfil de
+   elevação de uma trilha. Cada post é uma parada nessa
+   trilha — representa a caminhada do suporte até a
+   segurança, um passo de cada vez.
+------------------------------------------------------- */
+
+.trail {
+  position: relative;
+  padding: 8px 0 8px 34px;
+  margin-top: 8px;
+}
+
+.trail::before {
+  content: "";
+  position: absolute;
+  left: 7px;
+  top: 6px;
+  bottom: 6px;
+  width: 2px;
+  background: linear-gradient(180deg, var(--accent-warm), var(--accent) 60%, var(--line));
+}
+
+.trail-stop {
+  position: relative;
+  padding-bottom: 40px;
+}
+
+.trail-stop:last-child {
+  padding-bottom: 4px;
+}
+
+.trail-stop::before {
+  content: "";
+  position: absolute;
+  left: -34px;
+  top: 6px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--bg-card);
+  border: 3px solid var(--accent);
+}
+
+.trail-stop.is-current::before {
+  border-color: var(--accent-warm);
+  background: var(--accent-warm);
+}
+
+.post-date {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--ink-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.post-card h2 {
+  font-family: var(--font-display);
+  font-size: 25px;
+  margin: 0 0 8px;
+}
+
+.post-card h2 a {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.post-card h2 a:hover {
+  color: var(--accent-dark);
+}
+
+.post-card p {
+  color: var(--ink-soft);
+  margin: 0 0 10px;
+}
+
+.read-more {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  text-decoration: none;
+}
+
+/* ---------- página de post ---------- */
+
+.post-page {
+  padding: 48px 0 64px;
+}
+
+.breadcrumb {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--ink-faint);
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 28px;
+}
+
+.breadcrumb:hover {
+  color: var(--accent-dark);
+}
+
+.post-page h1 {
+  font-family: var(--font-display);
+  font-size: 38px;
+  line-height: 1.2;
+  margin: 0 0 14px;
+}
+
+.post-page .post-date {
+  margin-bottom: 28px;
+}
+
+.post-body p {
+  margin: 0 0 20px;
+}
+
+.post-body h2 {
+  font-family: var(--font-display);
+  font-size: 24px;
+  margin: 36px 0 14px;
+}
+
+.post-body blockquote {
+  margin: 28px 0;
+  padding: 4px 0 4px 20px;
+  border-left: 3px solid var(--accent-warm);
+  color: var(--ink-soft);
+  font-style: italic;
+}
+
+.post-nav {
+  margin-top: 48px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+}
+
+/* ---------- página sobre ---------- */
+
+.about-page {
+  padding: 48px 0 64px;
+}
+
+.about-page h1 {
+  font-family: var(--font-display);
+  font-size: 38px;
+  margin: 0 0 24px;
+}
+
+.about-page p {
+  margin: 0 0 18px;
+  color: var(--ink-soft);
+}
+
+.about-page p:first-of-type {
+  font-size: 19px;
+  color: var(--ink);
+}
+
+/* ---------- rodapé ---------- */
+
+.site-footer {
+  border-top: 1px solid var(--line);
+  padding: 32px 0 48px;
+  margin-top: 32px;
+}
+
+.site-footer .wrap {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--ink-faint);
+}
+
+.site-footer a {
+  color: var(--ink-faint);
+}
+
+/* ---------- responsivo ---------- */
+
+@media (max-width: 560px) {
+  .hero h1 {
+    font-size: 32px;
+  }
+  .brand-title {
+    font-size: 26px;
+  }
+  .post-page h1,
+  .about-page h1 {
+    font-size: 30px;
+  }
+}
