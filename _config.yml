@@ -10,12 +10,4 @@ author:
 
 lang: pt-BR
 timezone: America/Sao_Paulo
-
-header_pages:
-  - about.md
-
 show_excerpts: true
-
-plugins:
-  - jekyll-feed
-  - jekyll-seo-tag
