@@ -18,6 +18,7 @@ Cada post descreve o objetivo do laboratório, as etapas realizadas, problemas e
 - Virtualização
 - PowerShell
 
+  
 ---
 
 © Enzo Silveira
